@@ -2,7 +2,7 @@
 <html>
   <head>
     <meta charset="utf-8">
-    <title>Datavault</title>
+   
   </head>
   <body>
     <h1>Datavault</h1>
