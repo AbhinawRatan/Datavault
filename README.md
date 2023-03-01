@@ -17,9 +17,9 @@
     <h2>Installation</h2>
     <ol>
       <li>Clone the repository: <code>git clone https://github.com/your-username/datavault.git</code></li>
-      <li>Install dependencies: <code>npm install</code></li>
+      <li>Install dependencies: <code>npm install/ npm i</code></li>
       <li>Build the project: <code>npm run build</code></li>
-      <li>Start the server: <code>npm start</code></li>
+      <li>Start the server: <code>npm run dev</code></li>
     </ol>
     <h2>Usage</h2>
     <ol>
