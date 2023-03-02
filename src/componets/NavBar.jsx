@@ -12,7 +12,7 @@ const NavBar = () => {
   return (
     <nav className="w-full flex  py-6 justify-between items-center navbar">
       <img src={logo} alt="datavault" className="w-[200px] h-[120px]" />
-      <div className="absolute z-[0] w-[40%] h-[35%] top-40 pink__gradient" />
+      <div className="absolute z-[0] w-[40%] h-[35%] top-40 blue__gradient" />
       <div className="absolute z-[1] w-[40%] h-[40%] rounded-full blue__gradient bottom-40" />
       <div className="absolute z-[0] w-[50%] h-[50%] right-20 bottom-10 blue__gradient" />
 
