@@ -4,6 +4,7 @@ import { Link, NavLink } from 'react-router-dom';
 import { HashLink } from 'react-router-hash-link';
 import { close, logo, menu } from '../assets';
 import { navLinks } from '../constant';
+import styles from '../style';
 
 const activeClassName = 'active';
 
@@ -12,6 +13,7 @@ const NavBar = () => {
   const [toggle, setToggle] = useState(false);
 
   return (
+    <div className={`${styles.paddingX} ${styles.flexCenter}`}>
     <nav className="w-full flex  py-6 justify-between items-center navbar">
       <img src={logo} alt="datavault" className="w-[200px] h-[120px]" />
       <div className="absolute z-[0] w-[40%] h-[35%] top-40 pink__gradient" />
@@ -73,6 +75,7 @@ const NavBar = () => {
         </div>
       </div>
     </nav>
+    </div>
   );
 };
 

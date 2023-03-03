@@ -1,40 +1,16 @@
 import React from 'react';
-import styles from './style.js';
-import { NavBar, Feedback, Footer, Working, Hero, Zk } from './componets';
-import Ipfs from './componets/Ipfs.jsx';
-import { BrowserRouter as Router, Routes, Route, NavLink } from 'react-router-dom';
-import Dashboard from './Page/Dashboard.jsx';
-
+import { BrowserRouter as Router, Routes, Route, NavLink, BrowserRouter } from 'react-router-dom';
+import DashboardMain from './Page/DashboardMain.jsx';
+import Home from './Page/Home';
+import YourAccount from './componets/YourAccount'
 const App = () => {
   return (
-    <Router>
-      <div className="bg-primary w-full overflow-hidden">
-        <div className={`${styles.paddingX} ${styles.flexCenter}`}>
-          <div className={`${styles.boxWidth}`}>
-            <NavBar />
-            <Routes>
-              <Route path='/dashboard' element={<Dashboard />} />
-            </Routes>
-          </div>
-        </div>
-
-        <div className={`bg-primary ${styles.flexStart}`}>
-          <div className={`${styles.boxWidth}`}>
-            <Hero />
-          </div>
-        </div>
-
-        <div className={`bg-primary ${styles.paddingX} ${styles.flexCenter}`}>
-          <div className={`${styles.boxWidth}`}>
-            <Working />
-            <Feedback />
-            <Zk />
-            <Ipfs />
-            <Footer />
-          </div>
-        </div>
-      </div>
-    </Router>
+    <BrowserRouter>
+    <Routes>
+      <Route path='/' exact element={<Home/>} />
+      <Route path='/Dashboard' exact element={<DashboardMain/>} />
+    </Routes>
+    </BrowserRouter>
   );
 };
 

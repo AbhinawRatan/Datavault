@@ -1,6 +1,6 @@
 import React from "react";
 import { NavLink } from "react-router-dom";
-import Dashboard from "../Page/Dashboard";
+import Dashboard from "../Page/DashboardMain";
 
 
 const Button = ({ styles }) => (
