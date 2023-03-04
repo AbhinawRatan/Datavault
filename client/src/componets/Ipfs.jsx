@@ -3,7 +3,7 @@ import styles, { layout } from "../style";
 import Button from "./Button";
 const Ipfs = () => {
   return (
-    <section className={layout.section}>
+    <section  id = "ipfs"className={layout.section} >
     <div className={layout.sectionInfo}>
       <h2 className={styles.heading2}>
        Store your important  <br className="sm:block hidden" /> data on IPFS.
