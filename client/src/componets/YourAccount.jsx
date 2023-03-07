@@ -1,24 +1,35 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import { HiMenuAlt3 } from "react-icons/hi";
-import { AiOutlineUser,AiOutlineShareAlt, AiOutlineHome } from "react-icons/ai";
+import { AiOutlineUser, AiOutlineShareAlt, AiOutlineHome } from "react-icons/ai";
 import { FiFolder, FiUpload } from "react-icons/fi";
 import { Link } from "react-router-dom";
 
-
-
-const YourAccount= () => {
-  const menus = [
-    { path:"/", name: "Home", link: "/", icon: AiOutlineHome },
-    { path:"/YourAccount" ,name: "Your Account", link: "/", icon: AiOutlineUser , margin: true},
-    { path:"/Upload", name: "Upload", link: "/", icon: FiUpload, margin: true },
-    { path:"/FileManager",name: "File Manager", link: "/", icon: FiFolder, margin: true},
-    { path:"/Shared",name: "Shared", link: "/", icon: AiOutlineShareAlt, margin: true },
-
-  ];
+const YourAccount = () => {
   const [open, setOpen] = useState(true);
-  const [files, setFiles] = useState([{
-    name: 'myFile.pdf'
-  }])
+  const [account, setAccount] = useState("");
+
+  useEffect(() => {
+    const loadAccount = async () => {
+      if (window.ethereum) {
+        await window.ethereum.request({ method: "eth_requestAccounts" });
+        const accounts = await window.ethereum.request({ method: "eth_accounts" });
+        setAccount(accounts[0]);
+      } else {
+        console.error("Metamask is not installed");
+      }
+    };
+      console.log (account)
+    loadAccount();
+  }, []);
+
+  const menus = [
+    { path: "/", name: "Home", link: "/", icon: AiOutlineHome },
+    { path: "/YourAccount", name: "Metamask ID: {account}", link: "/", icon: AiOutlineUser, margin: true },
+    { path: "/Upload", name: "Upload", link: "/", icon: FiUpload, margin: true },
+    { path: "/FileManager", name: "File Manager", link: "/", icon: FiFolder, margin: true },
+    { path: "/Shared", name: "Shared", link: "/", icon: AiOutlineShareAlt, margin: true },
+  ];
+
   return (
     <section className="flex gap-6">
       <div
@@ -64,11 +75,15 @@ const YourAccount= () => {
           ))}
         </div>
       </div>
-      <div className=" m-3 text-xl text-gray-900 font-semibold w-full flex-2">
-      <span className="text-gradient font-poppins font-semibold ss:text-[72px] text-[40px] text-white ss:leading-[100.8px] leading-[75px]">Shared
-            <div className="absolute z-[1] w-[50%] h-[50%] rounded-full blue__gradient bottom-70" />
-      </span>{" "}
-      <h4 className="text-black text-right -y-10">Hey There!</h4>
+      <div className="m-3 text-xl text-gray-900 font-semibold w-full flex-2">
+        <span className="text-gradient font-poppins font-semibold ss:text-[72px] text-[40px] text-white ss:leading-[100.8px] leading-[75px]">
+          Your Account
+          <div className="absolute z-[1] w-[50%] h-[50%] rounded-full blue__gradient bottom-70" />
+        </span>{" "}
+        <h4 className="text-black text-right -y-10">Hey There!</h4>
+        <div>
+          <p className="title"></p>
+        </div>
       </div>
     </section>
   );
