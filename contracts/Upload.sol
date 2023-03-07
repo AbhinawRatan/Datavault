@@ -47,4 +47,10 @@ contract Upload {
   function shareAccess() public view returns(Access[] memory){
       return accessList[msg.sender];
   }
+  
+  function getImageHash(address _user) public view returns (string memory) {
+      require(_user == msg.sender || ownership[_user][msg.sender], "You don't have access");
+      require(value[_user].length > 0, "No images found for this user");
+      return value[_user][value[_user].length - 1];
+  }
 }

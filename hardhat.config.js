@@ -9,4 +9,8 @@ module.exports = {
       accounts: privateKeys,
     },
   },
+  paths: {
+    artifacts: "./client/src/artifacts",
+  },
 };
+

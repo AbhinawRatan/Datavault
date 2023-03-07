@@ -7,6 +7,7 @@ import { Link } from "react-router-dom";
 import FileUpload from "../componets/FileUpload";
 import Upload from "../../../artifacts/contracts/Upload.sol/Upload.json";
 import { ethers } from "ethers";
+import { Web3Provider } from "@ethersproject/providers";
 
 const DashboardMain = () => {
   const [account, setAccount] = useState("");
@@ -24,7 +25,7 @@ const DashboardMain = () => {
         const address = await signer.getAddress();
         setAccount(address);
 
-        let contractAddress = "0x3078157fec210C5BAb87031205FDA3877C150C1f";
+        let contractAddress = "0x203f9e8bE4856AB5608C0ab8244CCd466761c33e";
 
         const contract = new ethers.Contract(
           contractAddress,
