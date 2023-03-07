@@ -112,7 +112,6 @@ const DashboardMain = () => {
       <div className="m-3 text-xl text-gray-900 font-semibold w-full flex-2">
         <span className="text-gradient font-poppins font-semibold ss:text-[72px] text-[40px] text-white ss:leading-[100.8px] leading-[75px]">
           Upload
-          <div className="absolute z-[1] w-[50%] h-[50%] rounded-full blue__gradient bottom-70" />
         </span>{" "}
         <h4 className="text-black text-right -y-10">Hey There!</h4>
         <div>
