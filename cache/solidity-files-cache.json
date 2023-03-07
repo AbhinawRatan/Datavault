@@ -35,6 +35,41 @@
       "artifacts": [
         "Upload"
       ]
+    },
+    "C:\\Users\\abhig\\Datavault\\contracts\\Upload.sol": {
+      "lastModificationDate": 1678128652409,
+      "contentHash": "193803d8ab451e4cb15fd21a4decf873",
+      "sourceName": "contracts/Upload.sol",
+      "solcConfig": {
+        "version": "0.8.17",
+        "settings": {
+          "optimizer": {
+            "enabled": false,
+            "runs": 200
+          },
+          "outputSelection": {
+            "*": {
+              "*": [
+                "abi",
+                "evm.bytecode",
+                "evm.deployedBytecode",
+                "evm.methodIdentifiers",
+                "metadata"
+              ],
+              "": [
+                "ast"
+              ]
+            }
+          }
+        }
+      },
+      "imports": [],
+      "versionPragmas": [
+        ">=0.7.0 <0.9.0"
+      ],
+      "artifacts": [
+        "Upload"
+      ]
     }
   }
 }
