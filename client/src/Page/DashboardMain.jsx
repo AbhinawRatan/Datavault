@@ -50,7 +50,7 @@ const DashboardMain = () => {
       icon: AiOutlineUser,
       margin: true,
     },
-    {name: "Upload", link: "/Upload", icon: FiUpload, margin: true },
+    { name: "Upload", link: "/", icon: FiUpload, margin: true },
     // {
     //   name: "File Manager",
     //   link: "/FileManager",

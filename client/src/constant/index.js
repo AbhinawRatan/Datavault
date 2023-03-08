@@ -26,7 +26,7 @@ export const features = [
     icon: shield,
     title: "Secure",
     content:
-      "Datavault's security measures, such as IPFS and zk-SNARKs, protect sensitive data.",
+      "Datavault's security measures, such as IPFS and Account extraction, protect sensitive data.",
   },
   {
     id: "feature-2",

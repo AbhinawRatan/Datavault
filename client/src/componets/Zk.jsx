@@ -15,11 +15,11 @@ const Zk = () => {
     <div className={layout.sectionInfo}>
       <h2 className={styles.heading2}>
         Easily control your <br className="sm:block hidden" /> transaction 
-        with zero knowledge proof.
+        with Account Extraction.
       </h2>
       
       <p className={`${styles.paragraph} max-w-[470px] mt-5`}>
-      Zero-knowledge proofs allow us to verify the correctness of a computation without revealing any information about the input or output, thus preserving the confidentiality of sensitive data. 
+      Account Extraction is a feature in decentralized applications (dApps) that simplifies the process of connecting users' digital wallets or accounts to the dApp for executing transactions.
       </p>
       /</div>
      </section>

@@ -30,7 +30,7 @@ const Hero = () => {
           Data Storage.
         </h1>
         <p className={`${styles.paragraph} max-w-[470px] mt-5`}>
-        The ultimate solution for secure data storage. With our innovative system, backed by IPFS and zkRollup, you can rest assured that your data is safe.
+        The ultimate solution for secure data storage. With our innovative system, backed by IPFS and account extraction, you can rest assured that your data is safe.
         </p>
       </div>
 
