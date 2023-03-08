@@ -43,23 +43,21 @@ const DashboardMain = () => {
   }, []);
 
   const menus = [
-    { path: "/", name: "Home", link: "/", icon: AiOutlineHome },
+    {name: "Home", link: "/", icon: AiOutlineHome },
     {
-      path: "/YourAccount",
       name: "Your Account",
-      link: "/",
+      link: "/YourAccount",
       icon: AiOutlineUser,
       margin: true,
     },
     { path: "/Upload", name: "Upload", link: "/", icon: FiUpload, margin: true },
     {
-      path: "/FileUpload",
       name: "File Manager",
-      link: "/",
+      link: "/FileManager",
       icon: FiFolder,
       margin: true,
     },
-    { path: "/Shared", name: "Shared", link: "/", icon: AiOutlineShareAlt, margin: true },
+    { name: "Shared", link: "/Shared", icon: AiOutlineShareAlt, margin: true },
   ];
 
   const [open, setOpen] = useState(true);
