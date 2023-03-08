@@ -7,12 +7,12 @@ import { Link } from "react-router-dom";
 import FileUpload from "../componets/FileUpload";
 
 
-const Shared= () => {
+const FileManager= () => {
   const menus = [
     {name: "Home", link: "/", icon: AiOutlineHome },
     {name: "Your Account", link: "/YourAccount", icon: AiOutlineUser , margin: true},
     {name: "Upload", link: "/Upload", icon: FiUpload, margin: true },
-    // {name: "File Manager", link: "/FileManager", icon: FiFolder, margin: true},
+    {name: "File Manager", link: "/FileManager", icon: FiFolder, margin: true},
     {name: "Shared", link: "/Shared", icon: AiOutlineShareAlt, margin: true },
 
   ];
@@ -66,7 +66,7 @@ const Shared= () => {
         </div>
       </div>
       <div className=" m-3 text-xl text-gray-900 font-semibold w-full flex-2">
-      <span className="text-gradient font-poppins font-semibold ss:text-[72px] text-[40px] text-white ss:leading-[100.8px] leading-[75px]">Shared
+      <span className="text-gradient font-poppins font-semibold ss:text-[72px] text-[40px] text-white ss:leading-[100.8px] leading-[75px]">Your Files
             <div className="absolute z-[1] w-[50%] h-[50%] rounded-full blue__gradient bottom-70" />
       </span>{" "}
       <h4 className="text-black text-right -y-10">Hey There!</h4>
@@ -75,4 +75,4 @@ const Shared= () => {
   );
 };
 
-export default Shared;
+export default FileManager;

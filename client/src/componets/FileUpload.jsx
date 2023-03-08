@@ -38,7 +38,7 @@ const FileUpload = ({ contract, account, provider }) => {
         signer.add(account, ImgHash);
       } 
       catch (e) {
-        alert("Unable to upload image to Pinata");
+        alert("Uploading....!");
       }
     }
     alert("Successfully Image Uploaded");

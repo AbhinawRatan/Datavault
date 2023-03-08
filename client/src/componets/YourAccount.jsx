@@ -3,33 +3,57 @@ import { HiMenuAlt3 } from "react-icons/hi";
 import { AiOutlineUser, AiOutlineShareAlt, AiOutlineHome } from "react-icons/ai";
 import { FiFolder, FiUpload } from "react-icons/fi";
 import { Link } from "react-router-dom";
+import "./Display.css";
 
-const YourAccount = () => {
-  const [open, setOpen] = useState(true);
-  const [account, setAccount] = useState("");
-
-  useEffect(() => {
-    const loadAccount = async () => {
-      if (window.ethereum) {
-        await window.ethereum.request({ method: "eth_requestAccounts" });
-        const accounts = await window.ethereum.request({ method: "eth_accounts" });
-        setAccount(accounts[0]);
-      } else {
-        console.error("Metamask is not installed");
-      }
-    };
-      console.log (account)
-    loadAccount();
-  }, []);
-
+const YourAccount = ({contract, account }) => {
   const menus = [
-    { path: "/", name: "Home", link: "/", icon: AiOutlineHome },
-    { path: "/YourAccount", name: "Metamask ID: {account}", link: "/", icon: AiOutlineUser, margin: true },
-    { path: "/Upload", name: "Upload", link: "/", icon: FiUpload, margin: true },
-    { path: "/FileManager", name: "File Manager", link: "/", icon: FiFolder, margin: true },
-    { path: "/Shared", name: "Shared", link: "/", icon: AiOutlineShareAlt, margin: true },
+    {name: "Home", link: "/", icon: AiOutlineHome },
+    {name: "Your Account", link: "/YourAccount", icon: AiOutlineUser, margin: true },
+    {name: "Upload", link: "/Upload", icon: FiUpload, margin: true },
+    // {name: "File Manager", link: "/FileManager", icon: FiFolder, margin: true },
+    {name: "Shared", link: "/Shared", icon: AiOutlineShareAlt, margin: true },
   ];
 
+
+
+  const [data, setData] = useState("");
+  const getdata = async () => {
+    let dataArray;
+    const Otheraddress = document.querySelector(".address").value;
+    try {
+      if (Otheraddress) {
+        dataArray = await contract.display(Otheraddress);
+        console.log(dataArray);
+      } else {
+        dataArray = await contract.display(account);
+      }
+    } catch (e) {
+      alert("You don't have access");
+    }
+    const isEmpty = Object.keys(dataArray).length === 0;
+
+    if (!isEmpty) {
+      const str = dataArray.toString();
+      const str_array = str.split(",");
+      // console.log(str);
+      // console.log(str_array);
+      const images = str_array.map((item, i) => {
+        return (
+          <a href={item} key={i} target="_blank">
+            <img
+              key={i}
+              src={`https://gateway.pinata.cloud/ipfs/${item.substring(6)}`}
+              alt="new"
+              className="image-list"
+            ></img>
+          </a>
+        );
+      });
+      setData(images);
+    } else {
+      alert("No image to display");
+    }
+  }
   return (
     <section className="flex gap-6">
       <div
@@ -78,14 +102,23 @@ const YourAccount = () => {
       <div className="m-3 text-xl text-gray-900 font-semibold w-full flex-2">
         <span className="text-gradient font-poppins font-semibold ss:text-[72px] text-[40px] text-white ss:leading-[100.8px] leading-[75px]">
           Your Account
-          <div className="absolute z-[1] w-[50%] h-[50%] rounded-full blue__gradient bottom-70" />
+          <div className="absolute z-[1] w-[50%] h-[50%] rounded-full" />
         </span>{" "}
         <h4 className="text-black text-right -y-10">Hey There!</h4>
-        <div>
-          <p className="title"></p>
-        </div>
+        <>
+      <div className="image-list">{data}</div>
+      <input
+        type="text"
+        placeholder="Enter Address"
+        className="address"
+      ></input>
+      <button className="center button" onClick={getdata}>
+        Get Data
+      </button>
+      </>
       </div>
     </section>
+    
   );
 };
 

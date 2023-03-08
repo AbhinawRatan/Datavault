@@ -50,13 +50,13 @@ const DashboardMain = () => {
       icon: AiOutlineUser,
       margin: true,
     },
-    { path: "/Upload", name: "Upload", link: "/", icon: FiUpload, margin: true },
-    {
-      name: "File Manager",
-      link: "/FileManager",
-      icon: FiFolder,
-      margin: true,
-    },
+    {name: "Upload", link: "/Upload", icon: FiUpload, margin: true },
+    // {
+    //   name: "File Manager",
+    //   link: "/FileManager",
+    //   icon: FiFolder,
+    //   margin: true,
+    // },
     { name: "Shared", link: "/Shared", icon: AiOutlineShareAlt, margin: true },
   ];
 
