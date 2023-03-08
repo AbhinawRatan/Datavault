@@ -217,11 +217,6 @@
     "@babel/helper-validator-identifier" "^7.19.1"
     "to-fast-properties" "^2.0.0"
 
-"@esbuild/win32-ia32@0.16.17":
-  "integrity" "sha512-WnsKaf46uSSF/sZhwnqE4L/F89AYNMiD4YtEcYekBt9Q7nj0DiId2XH2Ng2PHM54qi5oPrQ8luuzGszqi/veig=="
-  "resolved" "https://registry.npmjs.org/@esbuild/win32-ia32/-/win32-ia32-0.16.17.tgz"
-  "version" "0.16.17"
-
 "@ethersproject/abi@^5.4.0", "@ethersproject/abi@5.4.0":
   "integrity" "sha512-9gU2H+/yK1j2eVMdzm6xvHSnMxk8waIHQGYCZg5uvAyH0rsAzxkModzBSpbAkAuhKFEovC2S9hM4nPuLym8IZw=="
   "resolved" "https://registry.npmjs.org/@ethersproject/abi/-/abi-5.4.0.tgz"
@@ -836,7 +831,9 @@
     "fastq" "^1.6.0"
 
 "@react-three/fiber@latest":
-  "version" "8.11.5"
+  "integrity" "sha512-5vZBlbdy+QbNIIjohERs1NL59LOo6XQwM4x4jjV1PKc5KkSy+73Y+/tQGdz6muEkbeOCt4TeM2KtcFjoAdjl1g=="
+  "resolved" "https://registry.npmjs.org/@react-three/fiber/-/fiber-8.11.9.tgz"
+  "version" "8.11.9"
   dependencies:
     "@babel/runtime" "^7.17.8"
     "@types/react-reconciler" "^0.26.7"

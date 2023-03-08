@@ -36,7 +36,8 @@ const FileUpload = ({ contract, account, provider }) => {
         const ImgHash = `ipfs://${resFile.data.IpfsHash}`;
         const signer = contract.connect(provider.getSigner());
         signer.add(account, ImgHash);
-      } catch (e) {
+      } 
+      catch (e) {
         alert("Unable to upload image to Pinata");
       }
     }
@@ -71,7 +72,7 @@ const FileUpload = ({ contract, account, provider }) => {
           </div>
           <span className="textArea">{fileName}</span>
         </div>
-        <button type="submit" className="upload" disabled={files.length === 0}>
+        <button type="submit" className="upload bg-green-400" disabled={files.length === 0}>
           Upload File
         </button>
       </form>

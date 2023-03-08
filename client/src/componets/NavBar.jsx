@@ -40,7 +40,6 @@ const NavBar = () => {
         <li>
           <NavLink to= '/dashboard' activeClassName={activeClassName}>
             Dashboard
-            
           </NavLink>
         </li>
          

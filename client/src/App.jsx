@@ -4,7 +4,6 @@ import DashboardMain from './Page/DashboardMain';
 import Home from './Page/Home';
 import YourAccount from './componets/YourAccount';
 import Shared from './componets/Shared';
-import FileUpload from './componets/FileUpload';
 const App = () => {
   return (
     <BrowserRouter>
@@ -14,7 +13,6 @@ const App = () => {
         <Route path='/Upload' element={<DashboardMain />} />
         <Route path='/YourAccount' element={<YourAccount />} />
         <Route path='/Shared' element={<Shared />} />
-        <Route exact path='/FileUpload' element={<FileUpload />} />
       </Routes>
     </BrowserRouter>
   );
