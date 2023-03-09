@@ -10,7 +10,7 @@ const YourAccount = ({contract, account }) => {
     {name: "Home", link: "/", icon: AiOutlineHome },
     {name: "Your Account", link: "/YourAccount", icon: AiOutlineUser, margin: true },
     {name: "Upload", link: "/Upload", icon: FiUpload, margin: true },
-    {name: "File Manager", link: "/FileManager", icon: FiFolder, margin: true },
+    // {name: "File Manager", link: "/FileManager", icon: FiFolder, margin: true },
     {name: "Shared", link: "/Shared", icon: AiOutlineShareAlt, margin: true },
   ];
 
