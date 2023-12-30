@@ -1,4 +1,3 @@
-This is a sample hardhat project
 
 # Sample Hardhat Project
 
